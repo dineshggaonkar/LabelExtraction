@@ -16,7 +16,7 @@ python3 train.py --path ./train_config.yaml
 
 ### Evaluate model on test data
 ```commandline
-python3 test.py --path ./data/test_data.csv 
+python3 test.py --path "path_to_test_data"
 ```
 
 ### Inference on single utterence
