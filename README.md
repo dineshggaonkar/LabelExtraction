@@ -29,3 +29,8 @@ python3 app.py
 curl -X POST http://localhost:8017/get-labels -H "Content-Type: application/json" -d '{"text":"Switch on the kitchen lights"}'
 ```
 sample output : ["activate","lights","kitchen"]
+
+#### tensorboard logs
+```commandline
+https://drive.google.com/drive/folders/1---4NW79iBzisE851RlpDF-zS3IxIc-r?usp=sharing
+```
