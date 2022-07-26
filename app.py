@@ -28,12 +28,14 @@ tokenizer = AutoTokenizer.from_pretrained(config["model_save_path"])
 
 model = AutoModelForSequenceClassification.from_pretrained(config["model_save_path"])
 
+sigmoid = torch.nn.Sigmoid()
 
 @app.post('/get-labels')
 def get_labels(extract_labels: ExtractLabels):
     input_ids = tokenizer.encode(extract_labels.text, return_tensors='pt')
-    output = model(input_ids).logits
-    sigmoid = torch.nn.Sigmoid()
+    with torch.no_grad():
+        output = model(input_ids).logits
+    
     probs = sigmoid(output.squeeze().cpu())
     print(probs)
     predictions = np.zeros(probs.shape)
