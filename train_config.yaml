@@ -1,0 +1,19 @@
+train_data_path: ./data/train_data.csv
+valid_data_path: ./data/valid_data.csv
+pretrained_lm: bert-base-uncased
+problem_type: multi_label_classification
+
+train_batch_size: 16
+test_batch_size: 64
+metric: f1
+learning_rate: 0.00002
+num_train_epochs: 3
+weight_decay: 0.01
+max_length: 32
+device_infer: cpu
+model_save_path: ./model
+log_path: ./logs
+
+labels: ['activate', 'increase', 'change language', 'decrease', 'deactivate', 'bring', 'lights', 'heat', 'Chinese', 'none_o', 'volume', 'English', 'lamp', 'shoes', 'newspaper', 'socks', 'music', 'Korean', 'juice', 'German', 'kitchen', 'none_l', 'washroom', 'bedroom']
+id2label: {0: 'activate', 1: 'increase', 2: 'change language', 3: 'decrease', 4: 'deactivate', 5: 'bring', 6: 'lights', 7: 'heat', 8: 'Chinese', 9: 'none', 10: 'volume', 11: 'English', 12: 'lamp', 13: 'shoes', 14: 'newspaper', 15: 'socks', 16: 'music', 17: 'Korean', 18: 'juice', 19: 'German', 20: 'kitchen', 21: 'none', 22: 'washroom', 23: 'bedroom'}
+label2id: {'activate': 0, 'increase': 1, 'change language': 2, 'decrease': 3, 'deactivate': 4, 'bring': 5, 'lights': 6, 'heat': 7, 'Chinese': 8, 'none_o': 9, 'volume': 10, 'English': 11, 'lamp': 12, 'shoes': 13, 'newspaper': 14, 'socks': 15, 'music': 16, 'Korean': 17, 'juice': 18, 'German': 19, 'kitchen': 20, 'none_l': 21, 'washroom': 22, 'bedroom': 23}
